@@ -1,0 +1,167 @@
+/* RESET */
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, fieldset, input {margin:0;padding:0}
+h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong, th {font-size: 1em;font-weight: normal;font-style: normal}
+strong{ font-weight:bold}
+ul, ol {list-style: none}
+fieldset, img {border: none}
+caption, th {text-align: left}
+table { border-collapse: collapse; border-spacing:0}
+body{ background:#fff; color:#333; font:12px/18px "Lucida Grande","Lucida Sans Unicode",Arial,HELVETICA;overflow:hidden;}
+input,select,textarea{ font-family:"Lucida Grande", "Lucida Sans Unicode",  Arial, Verdana, sans-serif; font-size:12px}
+a {	color: #333; outline:none}
+a:link, a:visited, a:active {text-decoration: none}
+a:hover {text-decoration: underline;color:#2a609f}
+i,cite,em{font-style:normal}
+.wrap{width:990px; margin:0 auto; position:relative}
+.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0}
+.clearfix {display: block}
+html[xmlns] .clearfix {display: block}
+* html .clearfix {height: 1%}
+::-webkit-input-placeholder {color:#ac6c3f;}
+html,body {width:100%;height:100%;overflow:hidden;}
+
+#main,#main>section {width:100%;height:100%;overflow:hidden;position:absolute;top:100%;left:0;}
+#main,#main>section:first-child {top:0;left:0;}
+
+.loading {background:#083870;z-index:10;}
+.loading footer {position:absolute;bottom:0;width:100%;height:99px;}
+.loading footer .box {background:url("..//img/loading_bottom.jpg") center no-repeat;width:67px;height:99px;margin:0 auto;position:relative;bottom:36px;display:none;}
+.loading article {position:relative;width:100%;height:100%;}
+.loading .star {width:340px;height:312px;position:absolute;left:50%;top:50%;margin-left:-170px;margin-top:-156px;}
+.loading .percent {text-align:center;font-size:32px;height:32px;line-height:32px;width:100%;position:absolute;top:50%;margin-top:170px;color:#ffc61c;font-family:"Chalkduster";}
+.loading .text {width:100%;height:100%;position:absolute;}
+.loading .text img {position:absolute;width:100%;height:1138px;top:50%;margin-top:-569px;}
+.loading .logo {position:absolute;top:20px;width:100%;display:block;}
+.loading .logo img {display:block;margin:0 auto;}
+
+
+
+.arrow {width:100%;height:31px;position:absolute;bottom:30px;}
+.arrow .box {background:url("..//img/arrow.png") no-repeat;width:63px;height:31px;margin:0 auto;position:relative;top:0;}
+
+.page_1 {background:#493d92;}
+.page_1 article {position:relative;width:100%;height:100%;}
+.page_1 .text {position:absolute;width:100%;height:100%;}
+.page_1 .text img {position:absolute;top:-90px;}
+.page_1 .main {position:absolute;width:100%;height:100%;}
+.page_1 .main img {position:absolute;top:-90px;}
+
+.page_2 {background:#3e9785;}
+.page_2 article {position:relative;width:100%;height:100%;}
+.page_2 .text {position:absolute;width:100%;height:100%;}
+.page_2 .text img {position:absolute;top:-100px;}
+.page_2 .main {position:absolute;width:100%;height:100%;}
+.page_2 .main img {position:absolute;top:-100px;}
+
+.page_3 {background:#fec537;}
+.page_3 article {position:relative;width:100%;height:100%;}
+.page_3 .text {position:absolute;width:100%;height:100%;}
+.page_3 .text img {position:absolute;top:-100px;}
+.page_3 .main {position:absolute;width:100%;height:100%;}
+.page_3 .main img {position:absolute;top:-100px;}
+
+.page_4 {background:#c10c15;}
+.page_4 article {position:relative;width:100%;height:100%;}
+.page_4 .text {position:absolute;width:100%;height:100%;}
+.page_4 .text img {position:absolute;top:-100px;}
+.page_4 .main {position:absolute;width:100%;height:100%;}
+.page_4 .main img {position:absolute;top:-100px;}
+
+.page_5 {background:#54b6e6;}
+.page_5 article {position:relative;width:100%;height:100%;}
+.page_5 .text {position:absolute;width:100%;height:100%;}
+.page_5 .text img {position:absolute;top:-100px;}
+.page_5 .main {position:absolute;width:100%;height:100%;}
+.page_5 .main img {position:absolute;top:-100px;}
+
+.page_6 {background:#66a53b;}
+.page_6 article {position:relative;width:100%;height:100%;}
+.page_6 .text {position:absolute;width:100%;height:100%;}
+.page_6 .text img {position:absolute;top:-100px;}
+.page_6 .main {position:absolute;width:100%;height:100%;}
+.page_6 .main img {position:absolute;top:-100px;}
+
+.page_7 {background:#f79437;}
+.page_7 article {position:relative;width:100%;height:100%;}
+.page_7 .text {position:absolute;width:100%;height:100%;}
+.page_7 .text img {position:absolute;top:-50px;}
+.page_7 .main {position:absolute;width:100%;height:100%;}
+.page_7 .main img {position:absolute;top:-50px;}
+
+.page_8 {background:#0b4e9a;}
+.page_8 article {position:relative;width:100%;height:100%;}
+.page_8 .text {position:absolute;width:100%;height:100%;}
+.page_8 .text img {position:absolute;top:-100px;}
+.page_8 .main {position:absolute;width:100%;height:100%;}
+.page_8 .main img {position:absolute;top:-100px;}
+
+.page_9 {background:#083870;}
+.page_9 article {position:relative;width:100%;height:100%;}
+.page_9 .text {position:absolute;width:100%;height:100%;}
+.page_9 .text img {position:absolute;top:-50px;}
+.page_9 .main {position:absolute;width:100%;height:100%;display:none;}
+.page_9 .main img {position:absolute;top:-50px;}
+.page_9 .btn {position:absolute;top:87.3%;width:100%;height:100px;}
+.page_9 .btn .link {position:absolute;width:206px;height:100px;left:94px;}
+.page_9 .btn .share_btn {position:absolute;width:206px;height:100px;right:94px;}
+.page_9 .logo {position:absolute;top:20px;width:100%;display:none;}
+.page_9 .logo img {display:block;margin:0 auto;}
+
+.music {background:url("..//img/music_on.png") no-repeat;width:128px;height:40px;position:absolute;right:10px;top:10px;}
+.music.off {background:url("..//img/music_off.png") no-repeat;}
+
+.share {background:rgba(0,0,0,0.8);position:absolute;top:0;left:0;width:100%;height:100%;display:none;}
+.share .box {width:333px;height:765px;position:absolute;top:0;right:0;}
+.share .box div {width:100%;height:100%;position:absolute;top:0;right:0;}
+.share .box .bg {background:url("..//img/share_bg.png") no-repeat;}
+.share .box .light {width:100%;height:100%;background:url("..//img/share_light.png") no-repeat;-webkit-animation:'light' 2s step-start infinite;}
+.share .box .light_1 {width:100%;height:100%;background:url("..//img/share_light_1.png") no-repeat;-webkit-animation:'light_1' 2s step-start infinite;}
+
+@-webkit-keyframes light {
+    0% {opacity:0;}
+    25% {opacity:0;}
+    50% {opacity:0.5;}
+    75% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@-webkit-keyframes light_1 {
+    0% {opacity:0;}
+    25% {opacity:0;}
+    50% {opacity:0;}
+    75% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@media screen and (max-height:900px){
+    .page_1 .main {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_1 .text {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_2 .main {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_2 .text {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_3 .main {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_3 .text {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_4 .main {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_4 .text {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_5 .main {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_5 .text {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_6 .main {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_6 .text {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_7 .main {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_7 .text {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_8 .main {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_8 .text {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_9 .main {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+    .page_9 .text {-webkit-transform-origin: 50% top;-webkit-transform: scale(0.8);}
+}
+
+@font-face {
+    font-family: 'Chalkduster';
+    src: url('../font/Chalkduster.eot');
+    src:
+    url('../font/Chalkduster.eot?#font-spider') format('embedded-opentype'),
+    url('../font/Chalkduster.woff') format('woff'),
+    url('../font/Chalkduster.ttf') format('truetype'),
+    url('../font/Chalkduster.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

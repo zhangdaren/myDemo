@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="../img" ImageName="img_mainPage" IsPhone="false" SpriteImgFileType="Png" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="p1Tel_pointer.png" LocationX="529" LocationY="89" />
+    <Sprite Path="p1_logo.png" LocationX="845" LocationY="312" />
+    <Sprite Path="p1_tip4.png" LocationX="442" LocationY="0" />
+    <Sprite Path="p1Tel_dial_btn.png" LocationX="265" LocationY="164" />
+    <Sprite Path="p1_tip3.png" LocationX="266" LocationY="0" />
+    <Sprite Path="p1_tip1.png" LocationX="0" LocationY="375" />
+    <Sprite Path="p1_tip2.png" LocationX="175" LocationY="376" />
+    <Sprite Path="p1Title_red.png" LocationX="438" LocationY="164" />
+    <Sprite Path="p1_tipArrow.png" LocationX="266" LocationY="89" />
+    <Sprite Path="loading_tel.png" LocationX="0" LocationY="0" />
+    <Sprite Path="p1TItle_banner.png" LocationX="846" LocationY="385" />
+    <Sprite Path="p1Tel_dial.png" LocationX="724" LocationY="0" />
+    <Sprite Path="titp.png" LocationX="350" LocationY="344" />
+  </SpriteList>
+</SpriteFile>

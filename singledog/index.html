@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no">
+		<title>单身狗大作战</title>
+		<link rel="stylesheet" href="css/style-promo.css" />
+		<style>
+			.loadingBox {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: #389ED7;
+				z-index: 9999;
+			}
+			
+			.loadingBox .loader {
+				position: absolute;
+				border-top: 0.3em solid rgba(7, 54, 129, 0.4);
+				border-right: 0.3em solid rgba(7, 54, 129, 0.4);
+				border-bottom: 0.3em solid rgba(7, 54, 129, 0.4);
+				border-left: 0.3em solid #073681;
+				-webkit-animation: loading 1.1s infinite linear;
+				animation: loading 1.1s infinite linear;
+			}
+			
+			.loadingBox .loader,
+			.loadingBox .loader:after {
+				position: absolute;
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				left: 50%;
+				margin-left: -25px;
+				top: 46%;
+				margin-top: -25px;
+			}
+			
+			.loaderTxt {
+				position: absolute;
+				font-size: 22px;
+				color: #073681;
+				width: 640px;
+				height: auto;
+				text-align: center;
+				top: 50%;
+			}
+			
+			@-webkit-keyframes loading {
+				0% {
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+			
+			@keyframes loading {
+				0% {
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!--loading -->
+		<div class="loadingBox">
+			<div class="loader"></div>
+			<div id="loaderTxt" class="loaderTxt">loading...</div>
+		</div>
+
+		<!--容器-->
+		<div class="main">
+			<div class="tipsPage">
+				<div class="scalePage">
+					<div class="tipsBg">
+						<div class="tipsTitle" id="tipsTitle"></div>
+						<div id="tipsTxt" class="tipsTxt"></div>
+						<div class="btnGroup">
+							<div class="btn" id="tipsSureBtn">确&nbsp;&nbsp;定</div>
+							<div class="btn" id="shareBtn">晒战绩</div>
+							<div class="btn" id="continueBtn">继续挑战</div>
+							<div class="btn" id="receiveBtn">领取奖励</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="shareTipPage">
+				<div class="scalePage">
+					<div class="shareTipBg">
+						<div class="shareTipTxt">叫上好友一起来玩吧！</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="shareCbPage">
+				<div class="scalePage">
+					<div class="shareFire"></div>
+					<div class="shareCbBg">
+						<div class="shareCbTitle">恭喜你 获得一张<span>500M流量券</span></div>
+						<div class="shareCbTxt">您领取的流量券将在下月月底前到账</div>
+						<div class="shareCbPic"></div>
+						<div id="shareCbBtn" class="shareCbBtn">确&nbsp;&nbsp;定</div>
+					</div>
+				</div>
+			</div>
+
+			<!--<div class="failPage">
+				<div class="scalePage">
+					<div class="failBg">
+						<div class="failTitle"></div>
+						<div class="monkey"></div>
+						<div class="failTxt1"></div>
+						<div id="failTxt2" class="failTxt2"></div>
+						<div id="closeFailBtn" class="closeFailBtn"></div>
+					</div>
+				</div>
+			</div>-->
+
+			<!--<div class="prizePage">
+				<div class="scalePage">
+					<div class="prizeBg">
+						<div class="sMonkey"></div>
+						<div class="prizeTitle"></div>
+						<div class="prizeTxt"></div>
+						<div id="inputBtn" class="inputBtn"></div>
+					</div>
+				</div>
+			</div>-->
+			<div class="inputPage">
+				<div class="scalePage">
+					<div class="inputBg">
+						<div class="inputFire"></div>
+						<div class="inputTitle">恭喜中奖</div>
+						<input id="telInput" class="inputTel inputCss" type="text" name="tel" value="" placeholder="请输入手机号码" maxlength="11" />
+						<div id="saveBtn" class="saveBtn">确&nbsp;&nbsp;定</div>
+					</div>
+				</div>
+			</div>
+			<div class="rulePage">
+				<div class="scalePage">
+					<div id="closeRuleBtn" class="closeRuleBtn"></div>
+					<div class="ruleBg">
+						<div class="ruleTitle">游戏规则</div>
+						<div class="ruleTxt" id="ruleTxt"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="p1">
+				<div class="scalePage">
+					<div class="logo"></div>
+					<div class="banner"></div>
+					<div class="bottomBg"></div>
+					<div class="bottomBg2"></div>
+
+					<div class="part1" id="part1">
+						<div class="dog"></div>
+						<div class="manShawde"></div>
+						<div class="man"></div>
+						<div class="icon1111"></div>
+					</div>
+					<div class="part2" id="part2">
+						<div class="panelBg"></div>
+						<div class="huskyGroup" id="huskyGroup">
+						</div>
+						<!--fix-->
+						<!--<div class="huskyBox flipY" style="left: -20px; opacity: 1;">
+							<div class="husky"></div>
+							<div class="circle"><span>空</span></div>
+						</div>-->
+					</div>
+
+					<div id="tips" align="center">
+						<div class="tipsTxt"></div>
+					</div>
+
+					<div class="timeTxt" id="timeTxt">3</div>
+					<!---->
+					<div id="ruleBtn" class="btn1">游戏规则</div>
+					<div id="startBtn" class="btn2">开始游戏</div>
+					<div id="startShareBtn" class="btn3">晒战绩</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+		<script>
+			//图片加载路径 cdn专用接口
+			var basePath = '';
+
+			////////  接口
+			var userData = {}; //用户信息。后台有交互请更新用户信息
+			userData.bind = false; //是否领取过奖品（提交过手机号码）
+			userData.grade = 1; //第几关， isBind=true时需初始当前变量！默认为空
+			userData.md5Num = "e1750ba206c6b8c4212d2402b3d61ebe";
+
+			//规则
+			userData.initRule = '<span>拼眼力：</span><strong>游戏开始后，成功找到藏在“二哈”下面的红包则可以获得相应关卡的奖励；中奖后晒战绩可以额外获得一次抽取500M流量的机会。</strong><br>' +
+				'<span>拼体力：</span>通关模式，通过的关卡越多得到的奖励越高（通过一关获得10元话费，通过两关获得20元话费，通过三关获得30元话费），完成三关则通关成功；<br>' +
+				'<span>拼实力：</span>活动期间，每位玩家只能领取一次奖励（以当前关卡获得的奖励为准）请正确填写河源移动本地的手机号码，当月领取的奖品将在下月月底前到账；<br>' +
+				'<span>活动对象：</span>仅限关注“河源移动沟通100”服务号的河源移动本地用户参加（随心王不可参与）<br>' +
+				'<span>活动时间：</span>2016年11月11日至2016年11月18日<br>' +
+				'<span>互斥规则：</span>本活动与“和教育点赞送话费”活动和“桃花水大剧院和教育”活动赠送的话费互斥，如每个号码参与多个活动，获赠话费上限30元。<br><br>' +
+				'本活动最终解释权归河源移动所有';
+
+			/**
+			 * 中奖了  提交手机号
+			 */
+			function saveData(data) {
+				var returnData;
+				$.ajax({
+					url: "http://localhost/hyMobile_oneDog/activity/gameOver.do",
+					type: 'get',
+					data: {
+						'phone': data.tel,
+						'source': data.level,
+						"md5": userData.md5Num
+					},
+					dataType: 'json',
+					async: false,
+					success: function(datas) {
+						returnData = datas;
+						userData.grade = data.level;
+					},
+					error: function() {
+						alert('服务器繁忙！');
+					}
+				});
+				//				console.log("tel:" + data.tel);
+				//				var returnData = {
+				//					isok: 1, //"不成功返回0","成功返回1"，
+				//					msg: "提示信息 提交成功", //"提示信息",
+				//				};
+
+				userData.bind = true;
+				return returnData;
+			}
+			//分享之后出现的弹窗  调用方法函数
+			/**
+			 *
+			 * */
+			//			    showShareCb()
+		</script>
+		<!-- build:js js/lib.js -->
+
+		<!--<script src="js/fx.js"></script>-->
+		<script src="js/fx.js"></script>
+		<script src="js/other.js"></script>
+		<script src="js/velocity.min.js"></script>
+		<script src="js/main.js"></script>
+		<!-- endbuild -->
+
+	</body>
+
+</html>

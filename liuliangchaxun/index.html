@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>流量查询</title>
+		<link rel="stylesheet" href="./css/app.css">
+		<link rel="stylesheet" href="css/swiper.min.css">
+
+	</head>
+
+	<body ontouchstart="">
+		<div class="absPage" id="detailPage">
+			<div class="main_box">
+				<div class="tabNavBox" id="tabNavBox">
+					<ul class="tabNav font28 clearfix" id="tabNav">
+						<li class="active">流量</li>
+						<li>通话</li>
+						<li>翼支付</li>
+					</ul>
+				</div>
+				<div class="bannerBox" id="bannerBox">
+					<div class="banner" id="banner" data-navIndex="0">
+						<!--流量-->
+						<!--有没环取决于data-hasCircle的值，，需要注意的是下面的值用相应的p标签，字体大小不一样-->
+						<div class="item" data-hasCircle="true">
+							<div class="tabNav_panel">
+								<div class="circleNav font20" id="circleNav">
+									<div id="circleLeftBox">
+										<canvas id="circleLeft"></canvas>
+									</div>
+									<div id="circleRightBox">
+										<canvas id="circleRight"></canvas>
+									</div>
+									<p class="txt_orange hidden">50%</p>
+									<p class="txt_blue hidden">60%</p>
+								</div>
+								<div class="data-ball gray" id="dataBall_data">
+									<div class="ballBox" id="ballBox_data">
+										<canvas></canvas>
+									</div>
+									<i class="ripple"></i>
+									<div class="info">
+										<!--有环使用这些-->
+										<p class="font22">已用流量</p>
+										<p class="font55">1024M</p>
+										<p class="font22">共:<i class="infinite"></i>G</p>
+
+										<!--无环使用这些-->
+										<!--<p class="font20">剩余时长</p>
+									<p class="font32"><span class="font74">800</span>分钟</p>
+									<p class="font20">共：800分钟</p>-->
+									</div>
+								</div>
+								<ul class="legend font22">
+									<li><i></i>基础流量</li>
+									<li><i></i>其它流量</li>
+								</ul>
+							</div>
+							<div class="statutsInfo">
+								<span class="font24">距离结算日10天</span>
+								<a class="font26">充流量</a>
+							</div>
+						</div>
+						<!--通话，注意，这里的data参数不要动！！！！！-->
+						<div class="item" data-hasCircle="false">
+							<div class="tabNav_panel">
+								<div class="data-ball">
+									<div class="ballBox" id="ballBox_tel">
+										<canvas></canvas>
+									</div>
+									<i class="ripple"></i>
+									<div class="info">
+										<p class="font20">剩余时长</p>
+										<p class="font32"><span class="font74">800</span>分钟</p>
+										<p class="font20">共：800分钟</p>
+									</div>
+								</div>
+							</div>
+							<div class="statutsInfo">
+								<span class="font24">距离结算日10天</span>
+								<a class="font26">充流量</a>
+							</div>
+						</div>
+
+						<!--翼支付-->
+						<div class="item">
+							<div class="dataBall_yipay">
+								<div class="ballBox_yipay">
+									<div class="info">
+										<p class="font20">帐户可用余额</p>
+										<!--千分可以使用toThousands（数字）-->
+										<p class="font32">￥<span class="font74">8,000</span></p>
+									</div>
+								</div>
+								<i class="ripple"></i>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="tabContent" id="tabContent">
+					<div class="tabBody active">
+
+						<div class="panelGroup" id="panelGroup">
+							<div class="dataPanel style_orange" id="style_orange">
+								<div class="dataInfo baseInfo">
+									<div class="pic" style="background-image: url(img/icon_infinite.png);"></div>
+									<div class="info">
+										<p class="font30">基础流量</p>
+										<p class="font24">总共：1G&nbsp;&nbsp;&nbsp;&nbsp;已用:224M</p>
+										<p class="font24">剩余：<i class="infinite"></i>M</p>
+									</div>
+								</div>
+
+								<div class="dataItem">
+									<p class="name font22">省内流量</p>
+									<div class="progrossBox">
+										<div class="proInfo font22">
+											<p>不限量套餐</p>
+											<p>总共:200M&nbsp;&nbsp;&nbsp;&nbsp;剩余:150M</p>
+										</div>
+
+										<div class="progressBar arrow">
+											<div class="progressBg">
+												<i class="bar" style="width: 50%;"></i>
+
+												<div class="vLines">
+													<i class="vLine"></i>
+													<i class="vLine"></i>
+												</div>
+
+												<div class="valueTxts">
+													<p class="valueTxt font18">15G</p>
+													<p class="valueTxt font18">40G<i class="icon_ques"></i></p>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dataItem">
+									<p class="name font22">国内流量</p>
+									<div class="progrossBox">
+										<div class="proInfo font22">
+											<p>20元套餐</p>
+											<p>总共:200M&nbsp;&nbsp;&nbsp;&nbsp;剩余:150M</p>
+										</div>
+
+										<div class="progressBar">
+											<div class="progressBg">
+												<i class="bar" style="width: 50%;"></i>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="dataPanel style_blue" id="style_blue">
+								<div class="dataInfo">
+									<div class="circleProgress" data-value="0.6">
+										<span class="font30"></span>
+									</div>
+									<div class="info">
+
+										<p class="font30">其他流量</p>
+										<p class="font24">总共：1G&nbsp;&nbsp;&nbsp;&nbsp;已用:224M</p>
+										<p class="font24">剩余：<i class="infinite"></i>M</p>
+
+									</div>
+								</div>
+								<div class="dataItem">
+									<p class="name font22">上月结转流量</p>
+									<div class="progrossBox">
+										<div class="proInfo font20">
+											<p>169分享套餐</p>
+											<p>总共:200M&nbsp;&nbsp;&nbsp;&nbsp;剩余:150M</p>
+										</div>
+
+										<div class="progressBar">
+											<div class="progressBg">
+												<i class="bar" style="width: 50%;"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dataItem">
+									<p class="name font22">省内流量</p>
+									<div class="progrossBox">
+										<div class="proInfo font20">
+											<p></p>
+											<p>总共:200M&nbsp;&nbsp;&nbsp;&nbsp;剩余:150M</p>
+										</div>
+
+										<div class="progressBar">
+											<div class="progressBg">
+												<i class="bar" style="width: 50%;"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dataItem">
+									<p class="name font22">国内流量</p>
+									<div class="progrossBox">
+										<div class="proInfo font20">
+											<p>20元套餐</p>
+											<p>总共:200M&nbsp;&nbsp;&nbsp;&nbsp;剩余:150M</p>
+										</div>
+
+										<div class="progressBar">
+											<div class="progressBg">
+												<i class="bar" style="width: 50%;"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dataPanel style_pink" id="style_pink">
+								<div class="dataInfo">
+									<div class="circleProgress" data-value="0.6">
+										<span class="font30"></span>
+									</div>
+									<div class="info">
+
+										<p class="font30">定向流量</p>
+										<p class="font24">总共：1G&nbsp;&nbsp;&nbsp;&nbsp;已用:224M</p>
+										<p class="font24">剩余：<i class="infinite"></i>M</p>
+
+									</div>
+								</div>
+								<div class="dataItem">
+									<p class="name font22">上月结转流量</p>
+									<div class="progrossBox">
+										<div class="proInfo font20">
+											<p>169分享套餐</p>
+											<p>总共:200M&nbsp;&nbsp;&nbsp;&nbsp;剩余:150M</p>
+										</div>
+
+										<div class="progressBar">
+											<div class="progressBg">
+												<i class="bar" style="width: 50%;"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dataItem">
+									<p class="name font22">省内流量</p>
+									<div class="progrossBox">
+										<div class="proInfo font20">
+											<p></p>
+											<p>总共:200M&nbsp;&nbsp;&nbsp;&nbsp;剩余:150M</p>
+										</div>
+
+										<div class="progressBar">
+											<div class="progressBg">
+												<i class="bar" style="width: 50%;"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dataItem">
+									<p class="name font22">国内流量</p>
+									<div class="progrossBox">
+										<div class="proInfo font20">
+											<p>20元套餐</p>
+											<p>总共:200M&nbsp;&nbsp;&nbsp;&nbsp;剩余:150M</p>
+										</div>
+
+										<div class="progressBar">
+											<div class="progressBg">
+												<i class="bar" style="width: 50%;"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tabBody">
+						<div class="dataPanel style_orange">
+							<div class="dataInfo baseInfo">
+								<div class="circleProgress" data-value="0.6">
+									<span class="font30"></span>
+								</div>
+								<div class="info">
+									<p class="font30">通话时长</p>
+									<p class="font24">总共：1000分钟&nbsp;&nbsp;&nbsp;&nbsp;已用:200分钟</p>
+									<p class="font24">剩余：800M</p>
+								</div>
+							</div>
+
+							<div class="dataItem">
+								<p class="name font22">本地通话时长</p>
+								<div class="progrossBox">
+									<div class="proInfo font20">
+										<p>169分享套餐</p>
+										<p>总共:200分钟&nbsp;&nbsp;&nbsp;&nbsp;剩余:150分钟</p>
+									</div>
+
+									<div class="progressBar">
+										<div class="progressBg">
+											<i class="bar" style="width: 50%;"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dataItem">
+								<p class="name font22">全车通话时长</p>
+								<div class="progrossBox">
+									<div class="proInfo font20">
+										<p>169分享套餐</p>
+										<p>总共:200分钟&nbsp;&nbsp;&nbsp;&nbsp;剩余:150分钟</p>
+									</div>
+
+									<div class="progressBar">
+										<div class="progressBg">
+											<i class="bar" style="width: 50%;"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tabBody">
+
+						<div class="dataPanel_yipay">
+							<p class="title font26">代金券（5张）</p>
+							<ul>
+								<li class="clearfix item_style_orange">
+									<div class="left">
+										<p class="font22">流量专属红包</p>
+										<p class="font30">单笔购买流量包满30元可使用</p>
+										<p class="font20">2018年12月31日前使用有效</p>
+									</div>
+									<div class="right">
+										<p class="font36">￥<span class="font60">5</span></p>
+										<p class="font20">去使用></p>
+									</div>
+								</li>
+								<li class="clearfix item_style_blue">
+									<div class="left">
+										<p class="font22">流量专属红包</p>
+										<p class="font30">单笔购买流量包满30元可使用</p>
+										<p class="font20">2018年12月31日前使用有效</p>
+									</div>
+									<div class="right">
+										<p class="font36">￥<span class="font60">5</span></p>
+										<p class="font20">去使用></p>
+									</div>
+								</li>
+								<li class="clearfix used">
+									<div class="left">
+										<p class="font22">流量专属红包</p>
+										<p class="font30">单笔购买流量包满30元可使用</p>
+										<p class="font20">2018年12月31日前使用有效</p>
+									</div>
+									<div class="right">
+										<p class="font36">￥<span class="font60">5</span></p>
+										<p class="font20">去使用></p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="dataPanel_yipay">
+							<div class="btn font32">翼支付包邮专区</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<script src="js/flexible.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery.transit.min.js.js"></script>
+		<script src="js/circle-progress.min.js"></script>
+		<script src="js/jcanvas.min.js"></script>
+		<script src="js/waterPolo.js"></script>
+		<script src="js/jquery.touchSwipe.min.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/detail.js"></script>
+		<script>
+			//fix circle-progress
+			;
+			(function() {
+				var proto = $.circleProgress.defaults,
+					originalDrawEmptyArc = proto.drawEmptyArc;
+
+				proto.emptyThickness = 5; // just a default value; 
+				// you may override it on init
+
+				// overriding original method
+				proto.drawEmptyArc = function(v) {
+					var oldGetThickness = this.getThickness,
+						oldThickness = this.getThickness(),
+						emptyThickness = this.emptyThickness || _oldThickness.call(this),
+						oldRadius = this.radius,
+						delta = (oldThickness - emptyThickness) / 2;
+
+					this.getThickness = function() {
+						return emptyThickness;
+					};
+
+					this.radius = oldRadius - delta;
+					this.ctx.save();
+					this.ctx.translate(delta, delta);
+
+					originalDrawEmptyArc.call(this, v);
+
+					this.ctx.restore();
+					this.getThickness = oldGetThickness;
+					this.radius = oldRadius;
+				};
+			})();
+		</script>
+		<script>
+			////////////////test 数据//////////////////////
+			//流量百分比
+			var percent_data = 50;
+			//通话百分比
+			var percent_tel = 10;
+
+		</script>
+	</body>
+
+</html>
