@@ -324,10 +324,7 @@
 		</div>
 
 		<!--备注:项目发布上线之后以下JS请使用微信服务器的链接-->
-		<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
-
-		<!--<script id="json_act" type="text/plain">${requestScope.jsonStr.detailedData}</script>
-<script id="json_infos" type="text/plain">${requestScope.prizeListm}</script> <!-- 中奖信息 数组 -->-->
+		<script src="../js/wxmoment.min.js"></script>
 
 		<script>
 			//禁止屏幕的自动滑动
@@ -337,17 +334,6 @@
 
 			//图片路径 修改
 			var basePath = '../';
-
-			//			var _path = '${pageContext.request.contextPath}';
-			//			var $u = {
-			//				'prizeId': 0,
-			//				'p': 0,
-			//				'totalPage': '1',
-			//				'uid': '${requestScope.wxUser.openid}',
-			//				'cid': '${requestScope.wxUser.cid}',
-			//				'aid': '${requestScope.jsonStr.activityId}'
-			//			};
-			//			var fileServer = '<%=CommonAPI.fileServer %>'; // 上传图片路径
 
 			////////  接口um
 			var userData = {}; //用户信息。后台有交互请更新用户信息
@@ -360,12 +346,9 @@
 
 			userData.notWrite = 0;
 
-			//	var act = JSON.parse($('#json_act').text());
-			//	document.title=act.activityTitle;//页面标题
 
 			//0317新增 接口    用户自定义banner图片名字
 			userData.banPicUrl = basePath + "img/banner.jpg";
-			//    userData.banPicUrl = "/PFLM/WxMoment-Workflow-0.0.4/20160311-ShenZhenTelecome/dist/img/banner.jpg";
 
 			//0328新增 接口  用户微信头像 相对路径  搜索basePath,可以修改绝对路径
 			userData.wechatImgUrl = basePath + "wechatImg/test.jpg";
@@ -373,8 +356,6 @@
 			//0328新增 接口  用户自己微信头
 			userData.wechatName = "微信呢称";
 
-			//	if(typeof act.logoPhotoUrl  != "undefined" && act.logoPhotoUrl.length>0){userData.logoUrl=fileServer+act.logoPhotoUrl;}
-			//	if(typeof act.bannerPhotoUrl  != "undefined" &&act.bannerPhotoUrl.length>0){userData.banPicUrl=fileServer+act.bannerPhotoUrl;}
 			if (userData.userName == '') {
 				userData.userName = userData.wechatName;
 			}
@@ -435,27 +416,6 @@
 				prizeName: "光纤一年"
 			}];
 
-			//初始化转盘奖品数量   数组长度 = 显示几等奖的转盘     例如:4=显示4等奖的转盘
-			//客户自定义设置的 [奖品说明]    数组0代表一等奖 , 数组1代表二等奖   以此类推   数组长度区间: 3<userData.initAllPrize.length<6
-			//    userData.initAllPrize = [
-			//        "光宽带一年免单",
-			//        "送光猫、高清机顶盒（办理业务）送光猫、高清机顶盒（办理业务",
-			//        "光猫5折",
-			//        "光猫7折",
-			//        "电信电视6个月（不包设备费）电信电视6个月（不包设备费）电信电视6个月（不包设备费）",
-			//        "院线通2张"
-			//    ];
-
-			//0405新增接口
-			/*
-			 skin:客户选择的皮肤 green=绿色   red=红色  blue=蓝色  后台需设置一个默认的颜色
-
-			 prizeState=转盘奖项显示方式:
-			 1=显示"奖品等级" "奖品描述" "奖品图片"
-			 2=显示"奖品等级" "奖品图片" 不显示"奖品描述"
-			 3=显示"奖品描述" "奖品图片" 不显示"奖品等级"
-			 4=显示"奖品等级" "奖品描述" 不显示"奖品图片"
-			 */
 			userData.prizeStyle = [{
 				skin: "green",
 				prizeState: 1
@@ -463,11 +423,6 @@
 
 			//0405更改接口 初始化转盘奖项
 			userData.initAllPrize = [1, 2, 6];
-
-			//抽奖的链接. 返回数值请参考json格式  code=1 抽奖成功   prizeId:0=谢谢参与  1=特等奖  2=一等奖  3=二等奖  以此类推  lvName=几等奖项  prizeName=中的奖品名字     0405更改的接口
-			//  userData.getPrizeUrl = "../getPrize.json";
-			//  userData.saveDataUrl = "../saveData.json";//保存资料的链接. 返回数值请参考json格式  code=1 提交成功   name=最终提交的姓名   tel=最终提交的手机号
-			//  userData.getListUrl = "../getList.json";//获取最新列表的链接. 返回数值请参考json格式  code=1 提交成功   moreList=[] 返回新的中奖名单
 
 			//请求后台  进行抽奖   0328更改了函数
 			function oneStart() {
@@ -519,10 +474,6 @@
 					type: 'get',
 					async: false,
 					data: {
-						//						'activityId': $u.aid,
-						//						'userName': app.$name_txt.html(), //0325更新
-						//						'tel': app.$tel_txt.html(), //0325更新
-						//						'prizeId': $u.prizeId
 					},
 					dataType: 'json',
 					success: function(datas) {
@@ -534,11 +485,6 @@
 							userData.getPrizeCount--; //次数减一
 							userData.currentPrize == null;
 
-							//							var ll = $('#scroller-content li').length;
-							//							if (ll < 20) {
-							//								$('#scroller-content').html('');
-							//								$u.p = 0;
-							//							}
 							getMoreListFun(true);
 
 							//成功保存资料回调函数
@@ -564,18 +510,6 @@
 
 			// 获取更多中奖名单  返回20个? 50个?  后台自定义
 			function getMoreListFun(isClear) {
-
-				//				console.log("$u.p01 " + $u.p)
-				//
-				//				if ($u.p == 0) {
-				//					$u.p = 1;
-				//				} else if ($u.totalPage <= $u.p) {
-				//					return;
-				//				} else {
-				//					$u.p += 1;
-				//				}
-				//
-				//				console.log("$u.p02 " + $u.p)
 
 				//请求更多中奖名单
 				$.ajax({
